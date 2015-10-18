@@ -18,7 +18,7 @@ take a look through the Ansible playbooks.
 If you wish to use this development environment without building the images, use the 
 Hashicorp hosted image:
  
-    vagrant init ssx/lamp; vagrant up --provider virtualbox 
+    vagrant init ssx/caffine; vagrant up --provider virtualbox 
  
 ---
 
@@ -31,3 +31,17 @@ You'll need to pull in the shared ansible scripts, using:
 
 This should create/update the `ansible` directory which contains the playbooks 
 used to configure the development environment.
+
+---
+
+# Build
+To build the box is pretty simple and painless. First, `vagrant up` the machine 
+and let the initial build complete. Once that has completed, ssh into the box 
+using `vagrant ssh` and run the commands in `box-clean.sh` one by one.
+
+Once you've finished those, run:
+
+    vagrant package --output caffine.box
+    
+This .box file can now be uploaded to Hashicorp's Atlas for you to make it 
+accessible to others (if required).

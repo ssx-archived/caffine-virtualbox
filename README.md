@@ -14,6 +14,14 @@ take a look through the Ansible playbooks.
 
 ---
 
+# Use without building
+If you wish to use this development environment without building the images, use the 
+Hashicorp hosted image:
+ 
+    vagrant init ssx/lamp; vagrant up --provider virtualbox 
+ 
+---
+
 # Pull Ansible submodules
 You'll need to pull in the shared ansible scripts, using:
 
